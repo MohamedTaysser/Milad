@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milad Excellence | شركة ميلاد للتميز العالمية</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700;900&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Frameworks & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --royal-green: #041d14;
+            --emerald-deep: #062c1e;
+            --gold-bright: #f3e5ab;
+            --gold-rich: #c5a059;
+            --gold-dark: #8a6d3b;
+            --pearl: #fdfcf0;
+            --glass-white: rgba(255, 255, 255, 0.03);
+            --glass-gold: rgba(197, 160, 89, 0.1);
+        }
+
+        .dark-mode {
+            --bg-main: #020f0a;
+            --bg-accent: #041d14;
+            --text-primary: #fdfcf0;
+            --card-bg: rgba(6, 44, 30, 0.7);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+        }
+
+        .brand-font { font-family: 'Amiri', serif; }
+        .en-font { font-family: 'Cinzel', serif; }
+
+        /* --- Rich Gold Text & Gradients --- */
+        .gold-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% auto;
+            animation: gold-shimmer 6s linear infinite;
+        }
+
+        @keyframes gold-shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        /* --- Impressive Background Layering --- */
+        .royal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(10, 77, 54, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .ornament-pattern {
+            position: absolute;
+            width: 100%; height: 100%;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23c5a059' stroke-width='1'/%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        /* --- Navigation Luxury --- */
+        nav {
+            background: rgba(2, 15, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* --- Hero Section Excellence --- */
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -2px;
+        }
+
+        .gold-border-box {
+            position: relative;
+            padding: 10px 30px;
+            border: 1px solid var(--gold-rich);
+        }
+
+        .gold-border-box::before, .gold-border-box::after {
+            content: '';
+            position: absolute;
+            width: 10px; height: 10px;
+            background: var(--gold-rich);
+        }
+        .gold-border-box::before { top: -5px; left: -5px; }
+        .gold-border-box::after { bottom: -5px; right: -5px; }
+
+        /* --- Card Architecture (The "Impressive" Part) --- */
+        .premium-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            border-radius: 4px; /* Classic sharp luxury */
+            padding: 3rem 2rem;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .premium-card::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 0; height: 2px;
+            background: var(--gold-rich);
+            transition: width 0.4s ease;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--gold-rich);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .premium-card:hover::after {
+            width: 100%;
+        }
+
+        .icon-circle {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--royal-green), #0a4d36);
+            border: 1px solid var(--gold-rich);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 2rem;
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .icon-circle i {
+            transform: rotate(-45deg);
+            font-size: 2rem;
+        }
+
+        .premium-card:hover .icon-circle {
+            background: var(--gold-rich);
+            color: var(--royal-green);
+        }
+
+        /* --- Buttons --- */
+        .btn-luxury {
+            position: relative;
+            padding: 18px 50px;
+            background: transparent;
+            color: var(--gold-rich);
+            font-weight: 800;
+            overflow: hidden;
+            border: 1px solid var(--gold-rich);
+            transition: 0.4s;
+            z-index: 1;
+        }
+
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: var(--gold-rich);
+            transition: 0.4s;
+            z-index: -1;
+        }
+
+        .btn-luxury:hover {
+            color: var(--royal-green) !important;
+        }
+
+        .btn-luxury:hover::before {
+            left: 0;
+        }
+
+        /* --- Leadership Grid --- */
+        .member-frame {
+            position: relative;
+            padding: 15px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 450px;
+            background: var(--royal-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-image i {
+            font-size: 8rem;
+            color: rgba(255,255,255,0.05);
+        }
+
+        .member-info {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 2rem;
+            background: linear-gradient(transparent, var(--royal-green));
+            text-align: right;
+        }
+
+        /* --- Section Titles --- */
+        .master-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+
+        .master-title span {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 10px;
+            color: var(--gold-rich);
+            margin-top: 10px;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--royal-green); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-rich); border-radius: 10px; }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <div class="royal-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="absolute top-0 w-full z-[100] py-2 px-10">
+        <div class="container-fluid flex justify-between items-center">
+            <div class="flex items-center gap-6" data-aos="fade-left">
+                <div class="h-14 w-px bg-gold-rich/30 hidden md:block"></div>
+                <div class="flex flex-col">
+                    <span class="text-4xl font-black gold-gradient brand-font tracking-tighter">MILAD</span>
+                    <span class="text-[9px] tracking-[0.5em] opacity-60 lang-target" data-en="EXCELLENCE INTERNATIONAL" data-ar="شركة ميلاد للتميز العالمية">شركة ميلاد للتميز العالمية</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-8">
+                <div class="hidden lg:flex gap-10 text-xs font-bold uppercase tracking-widest opacity-70">
+                    <a href="#subsidiaries" class="hover:text-gold-rich transition">Portfolio</a>
+                    <a href="#leadership" class="hover:text-gold-rich transition">Board</a>
+                    <a href="#contact" class="hover:text-gold-rich transition">Inquiry</a>
+                </div>
+                <button onclick="toggleLanguage()" class="btn-luxury py-2 px-6 text-xs uppercase tracking-widest">
+                    <span id="lang-btn-text">English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="ornament-pattern"></div>
+        
+        <!-- Background Elements -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-20 blur-[100px] pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-700 rounded-full"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-900 rounded-full"></div>
+        </div>
+
+        <div class="container text-center relative z-10 px-6">
+            <div class="inline-block gold-border-box mb-10" data-aos="fade-down">
+                <span class="text-xs font-black tracking-[0.8em] gold-gradient lang-target uppercase" 
+                      data-ar="إرث القوة والابتكار" data-en="LEGACY OF POWER & INNOVATION">إرث القوة والابتكار</span>
+            </div>
+            
+            <h1 class="hero-title mb-12" data-aos="zoom-out" data-aos-duration="1500">
+                <div class="gold-gradient brand-font lang-target" data-ar="ميلاد" data-en="MILAD">ميلاد</div>
+                <div class="text-white opacity-90 en-font lang-target" data-ar="للتميز" data-en="EXCELLENCE">للتميز</div>
+            </h1>
+            
+            <div class="max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-xl md:text-3xl font-light leading-relaxed opacity-80 lang-target"
+                   data-ar="نصيغ معايير الاستثمار العالمي عبر تمكين كيانات اقتصادية تتسم بالصلابة والرؤية المستقبلية."
+                   data-en="We shape global investment standards by empowering economic entities characterized by solidity and future vision.">
+                   نصيغ معايير الاستثمار العالمي عبر تمكين كيانات اقتصادية تتسم بالصلابة والرؤية المستقبلية.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="#subsidiaries" class="btn-luxury no-underline lang-target" data-ar="استكشف الكيانات" data-en="EXPLORE ENTITIES">استكشف الكيانات</a>
+                <div class="h-px w-20 bg-gold-rich hidden md:block"></div>
+                <a href="#contact" class="text-white uppercase tracking-[0.3em] font-bold text-sm hover:text-gold-rich transition no-underline lang-target" 
+                   data-ar="شراكة استراتيجية" data-en="STRATEGIC PARTNERSHIP">شراكة استراتيجية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidiaries Section -->
+    <section id="subsidiaries" class="py-40 relative bg-emerald-950/5">
+        <div class="container mx-auto px-6">
+            <div class="mb-32 text-center" data-aos="fade-up">
+                <h2 class="master-title gold-gradient brand-font lang-target" data-ar="الكيانات الاقتصادية" data-en="ECONOMIC ENTITIES">
+                    الكيانات الاقتصادية
+                    <span class="lang-target" data-ar="محفظة المجموعة" data-en="GROUP PORTFOLIO">محفظة المجموعة</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+                <!-- IFBS -->
+                <div class="premium-card group" data-aos="fade-up">
+                    <div class="icon-circle"><i class="fas fa-microchip"></i></div>
+                    <h3 class="text-3xl font-black mb-6 gold-gradient">IFBS</h3>
+                    <p class="text-lg opacity-60 leading-relaxed lang-target" 
+                       data-ar="دمج الذكاء الاصطناعي في تحليل الأسواق المالية العالمية لضمان عوائد مستدامة." 
+                       data-en="Integrating AI into global financial market analysis to ensure sustainable returns.">
+                       دمج الذكاء الاصطناعي في تحليل الأسواق المالية العالمية لضمان عوائد مستدامة.
+                    </p>
+                </div>
+                <!-- Saden -->
+                <div class="premium-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-circle"><i class="fas fa-chess-king"></i></div>
+                    <h3 class="text-3xl font-black mb-6 gold-gradient lang-target" data-ar="سادن الفاخرة" data-en="Saden Luxury">سادن الفاخرة</h3>
+                    <p class="text-lg opacity-60 leading-relaxed lang-target" 
+                       data-ar="عنوان الأناقة الرجالية الراقية، حيث تلتقي الحرفة التقليدية بأجود المنسوجات العالمية." 
+                       data-en="The hallmark of luxury menswear, where traditional craftsmanship meets the world's finest textiles.">
+                       عنوان الأناقة الرجالية الراقية، حيث تلتقي الحرفة التقليدية بأجود المنسوجات العالمية.
+                    </p>
+                </div>
+                <!-- Drift -->
+                <div class="premium-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-circle"><i class="fas fa-car-side"></i></div>
+                    <h3 class="text-3xl font-black mb-6 gold-gradient lang-target" data-ar="جرفت أوتو" data-en="Drift Auto">جرفت أوتو</h3>
+                    <p class="text-lg opacity-60 leading-relaxed lang-target" 
+                       data-ar="رعاية فائقة للمحركات، ومركز هندسي متخصص في حماية وتجهيز السيارات الفارهة." 
+                       data-en="Advanced engine care and an engineering center specializing in luxury vehicle protection.">
+                       رعاية فائقة للمحركات، ومركز هندسي متخصص في حماية وتجهيز السيارات الفارهة.
+                    </p>
+                </div>
+                <!-- Break It -->
+                <div class="premium-card group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-circle"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-3xl font-black mb-6 gold-gradient lang-target" data-ar="بريك ات" data-en="Break It">بريك ات</h3>
+                    <p class="text-lg opacity-60 leading-relaxed lang-target" 
+                       data-ar="حلول ميكانيكية متكاملة وقطع غيار دقيقة تدعم استمرارية النقل والخدمات اللوجستية." 
+                       data-en="Integrated mechanical solutions and precision parts supporting transport and logistics.">
+                       حلول ميكانيكية متكاملة وقطع غيار دقيقة تدعم استمرارية النقل والخدمات اللوجستية.
+                    </p>
+                </div>
+                <!-- Al-Ansar -->
+                <div class="premium-card group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-circle"><i class="fas fa-code"></i></div>
+                    <h3 class="text-3xl font-black mb-6 gold-gradient lang-target" data-ar="الأنصار للتقنية" data-en="Al-Ansar Tech">الأنصار للتقنية</h3>
+                    <p class="text-lg opacity-60 leading-relaxed lang-target" 
+                       data-ar="برمجيات مخصصة لإدارة العمليات المعقدة وتطوير تقنيات التحكم الذكي للمركبات." 
+                       data-en="Custom software for managing complex operations and developing smart control tech for vehicles.">
+                       برمجيات مخصصة لإدارة العمليات المعقدة وتطوير تقنيات التحكم الذكي للمركبات.
+                    </p>
+                </div>
+                <!-- Ben Hill -->
+                <div class="premium-card group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon-circle"><i class="fas fa-mug-hot"></i></div>
+                    <h3 class="text-3xl font-black mb-6 gold-gradient lang-target" data-ar="بن هيل كافيه" data-en="Ben Hill Cafe">بن هيل كافيه</h3>
+                    <p class="text-lg opacity-60 leading-relaxed lang-target" 
+                       data-ar="مساحة فاخرة لتذوق أرقى محاصيل القهوة المختصة، تجسد فن الضيافة العالمية." 
+                       data-en="A luxury space to savor the finest specialty coffee beans, embodying the art of global hospitality.">
+                       مساحة فاخرة لتذوق أرقى محاصيل القهوة المختصة، تجسد فن الضيافة العالمية.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Excellence -->
+    <section id="leadership" class="py-40 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-32 border-b border-gold-rich/20 pb-10">
+                <div data-aos="fade-right">
+                    <h2 class="master-title gold-gradient brand-font lang-target" data-ar="القيادة" data-en="LEADERSHIP">
+                        القيادة
+                        <span class="lang-target" data-ar="صناع القرار" data-en="DECISION MAKERS">صناع القرار</span>
+                    </h2>
+                </div>
+                <p class="max-w-md opacity-40 text-sm leading-relaxed mb-6 lang-target" data-ar="عقول استراتيجية تقود دفة المجموعة نحو آفاق عالمية غير مسبوقة." data-en="Strategic minds steering the group towards unprecedented global horizons.">عقول استراتيجية تقود دفة المجموعة نحو آفاق عالمية غير مسبوقة.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
+                <div class="member-frame group" data-aos="fade-up">
+                    <div class="member-image">
+                        <i class="fas fa-shield-halved"></i>
+                        <div class="member-info">
+                            <h4 class="text-4xl font-black text-white mb-2 lang-target" data-ar="م. أحمد علي" data-en="Eng. Ahmed Ali">م. أحمد علي</h4>
+                            <p class="gold-gradient font-black tracking-widest lang-target" data-ar="الرئيس التنفيذي" data-en="CHIEF EXECUTIVE OFFICER">الرئيس التنفيذي</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-frame group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <i class="fas fa-compass"></i>
+                        <div class="member-info">
+                            <h4 class="text-4xl font-black text-white mb-2 lang-target" data-ar="أ. سارة محمد" data-en="Ms. Sarah Mohammed">أ. سارة محمد</h4>
+                            <p class="gold-gradient font-black tracking-widest lang-target" data-ar="مدير العمليات" data-en="CHIEF OPERATING OFFICER">مدير العمليات</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Luxury Form -->
+    <section id="contact" class="py-40">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto bg-emerald-950/20 border border-gold-rich/10 p-12 md:p-24 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    <div data-aos="fade-right">
+                        <span class="text-gold-rich font-black tracking-[0.4em] text-xs uppercase mb-6 block">Connect</span>
+                        <h2 class="text-6xl font-black mb-10 lang-target" data-ar="تواصل مع التميز" data-en="CONNECT WITH EXCELLENCE">تواصل مع التميز</h2>
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="gold-gradient font-black mb-2 tracking-widest uppercase text-sm">Headquarters</h5>
+                                <p class="opacity-60 lang-target" data-ar="برج النخبة، طريق الملك فهد، الرياض" data-en="Elite Tower, King Fahd Road, Riyadh">برج النخبة، طريق الملك فهد، الرياض</p>
+                            </div>
+                            <div>
+                                <h5 class="gold-gradient font-black mb-2 tracking-widest uppercase text-sm">Direct Line</h5>
+                                <p class="opacity-60">+966 11 000 0000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <form class="space-y-12">
+                            <div class="relative">
+                                <input type="text" class="w-full bg-transparent border-b border-gold-rich/30 py-4 focus:border-gold-rich outline-none transition-all peer" placeholder=" ">
+                                <label class="absolute right-0 top-4 opacity-40 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-gold-rich lang-target" data-ar="الاسم الكامل" data-en="FULL NAME">الاسم الكامل</label>
+                            </div>
+                            <div class="relative">
+                                <input type="email" class="w-full bg-transparent border-b border-gold-rich/30 py-4 focus:border-gold-rich outline-none transition-all peer" placeholder=" ">
+                                <label class="absolute right-0 top-4 opacity-40 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-gold-rich lang-target" data-ar="البريد الرسمي" data-en="OFFICIAL EMAIL">البريد الرسمي</label>
+                            </div>
+                            <button class="btn-luxury w-full lang-target" data-ar="إرسال طلب استشاري" data-en="SUBMIT CONSULTATION REQUEST">إرسال طلب استشاري</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-gold-rich/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-12">
+                <span class="text-5xl font-black gold-gradient brand-font">MILAD</span>
+                <p class="text-[8px] tracking-[0.8em] opacity-40 mt-4 uppercase">Excellence International Company</p>
+            </div>
+            <div class="flex justify-center gap-12 mb-12">
+                <a href="#" class="text-gold-rich hover:scale-125 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                <a href="#" class="text-gold-rich hover:scale-125 transition"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gold-rich hover:scale-125 transition"><i class="fab fa-instagram text-xl"></i></a>
+            </div>
+            <p class="text-[9px] opacity-30 tracking-widest uppercase">© 2026 MILAD EXCELLENCE. AUTHENTICITY IN EVERY VENTURE.</p>
+        </div>
+    </footer>
+
+    <!-- Floating UI -->
+    <div class="fixed bottom-10 right-10 flex flex-col gap-6 z-[200]">
+        <button onclick="toggleMode()" class="w-14 h-14 rounded-full bg-gold-rich text-emerald-950 flex items-center justify-center shadow-2xl hover:scale-110 transition">
+            <i id="mode-icon" class="fas fa-sun"></i>
+        </button>
+        <a href="https://wa.me/96600000000" class="w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition no-underline">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200, once: true, easing: 'ease-out-back' });
+
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const targets = document.querySelectorAll('.lang-target');
+            const btn = document.getElementById('lang-btn-text');
+
+            if (currentLang === 'ar') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                btn.innerText = 'العربية';
+                targets.forEach(t => t.innerText = t.getAttribute('data-en'));
+                currentLang = 'en';
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                btn.innerText = 'English';
+                targets.forEach(t => t.innerText = t.getAttribute('data-ar'));
+                currentLang = 'ar';
+            }
+            AOS.refresh();
+        }
+
+        function toggleMode() {
+            const body = document.body;
+            const icon = document.getElementById('mode-icon');
+            body.classList.toggle('dark-mode');
+            icon.className = body.classList.contains('dark-mode') ? 'fas fa-sun' : 'fas fa-moon';
+        }
+    </script>
+</body>
+</html>
